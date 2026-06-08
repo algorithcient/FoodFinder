@@ -137,7 +137,7 @@ span{
     right:0;
     background-position:center;
     background-size:contain;
-    background-image:url("/Img/imagen_fondo.png");
+    background-image:url("/Assests/Img/imagen_fondo.png");
     filter:brightness(30%);
     z-index:-1;
 }
