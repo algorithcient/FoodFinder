@@ -568,7 +568,7 @@ img {
 }
 
 /* ==========================================
-   Gestión de pago 1/2....
+   Gestión de pago 1/2
    ========================================== */
 
 :root {
@@ -637,7 +637,7 @@ img {
 }
 
 .carrito-de-compra .container {
-  margin-top: 159px;
+  margin-top: 40px;
   width: 560px;
   height: 619px;
   margin-left: 212px;
@@ -1476,7 +1476,7 @@ img {
 }
 
 .carrito-de-compra .container-30 {
-  margin-top: 165px;
+  margin-top: 40px;
   width: 360px;
   height: 705px;
   display: flex;
