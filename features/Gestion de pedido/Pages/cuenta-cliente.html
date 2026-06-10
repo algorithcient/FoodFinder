@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - FoodFinder</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <main class="contenedor-registro">
+
+        <!-- Pantalla 1: Login -->
+        <section id="pantallaLogin" class="pantalla activa">
+            <div class="tarjeta-login">
+                <div class="imagen-login"></div>
+
+                <div class="formulario-login">
+                    <button class="btn-volver">←</button>
+                    <img id="logo" src="/Assests/Icons/Logo_Sin_Fondo.png" alt="Logo FoodFinder" width="90" height="90">
+
+                    <h1>Iniciar Sesión</h1>
+                    <p>Ingrese su correo y contraseña</p>
+
+                    <form>
+                        <label>Correo</label>
+                        <input type="email" placeholder="Ingrese su correo">
+
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="Ingrese su contraseña">
+
+                        <button type="button" class="btn-naranja">Iniciar Sesión</button>
+                        <button type="button" id="btnCrearCuenta" class="btn-verde">Crear Cuenta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla 2: Selección de rol -->
+        <section id="pantallaRol" class="pantalla">
+            <div class="tarjeta-rol">
+                <button id="volverLogin" class="btn-volver">←</button>
+
+                <h2>REGÍSTRATE</h2>
+                <h3>Seleccione su rol</h3>
+
+                <div class="roles">
+                    <div class="rol">
+                        <img id="logo-cocinero" src="/Assests/Icons/chef.png" alt="Logo FoodFinder" width="184" height="184">
+                        <button class="btn-verde">Cocinero</button>
+                    </div>
+
+                    <div class="rol">
+                        <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Logo FoodFinder" width="173" height="173">
+                        <button id="btnConsumidor" class="btn-naranja pequeno">Consumidor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla 3: Registro cliente -->
+        <section id="pantallaRegistro" class="pantalla">
+            <div class="tarjeta-registro">
+                <button id="volverRol" class="btn-volver">←</button>
+
+                <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Logo FoodFinder" width="47" height="77">
+
+                <h2>Ingrese sus datos</h2>
+
+                <form>
+                    <label>Nombre completo</label>
+                    <input type="text">
+
+                    <label>Correo electrónico</label>
+                    <input type="email">
+
+                    <label>Teléfono/Celular</label>
+                    <input type="tel">
+
+                    <label>Contraseña</label>
+                    <input type="password">
+
+                    <button type="button" class="btn-azul">Guardar cuenta</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/cuenta.js"></script>
+</body>
+</html>

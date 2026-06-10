@@ -1,0 +1,287 @@
+/* ================================= */
+/* CONFIGURACIÓN GENERAL */
+/* ================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E9E7E7;
+}
+
+.contenedor-registro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pantalla {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.pantalla.activa {
+    display: flex;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.btn-volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #1C2B39;
+    color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.btn-naranja {
+    background-color: #FF8A00;
+    color: #000000;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+.btn-verde {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+.btn-azul {
+    background-color: #1C2B39;
+    color: #FFFFFF;
+    padding: 18px 60px;
+    border-radius: 40px;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+/* ================================= */
+/* PANTALLA LOGIN */
+/* ================================= */
+
+.tarjeta-login {
+    display: flex;
+    width: 900px;
+    min-height: 560px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+.imagen-login {
+    width: 50%;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../../../Assets/Img/imagen_fondo.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.formulario-login {
+    position: relative;
+    width: 50%;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.formulario-login h1 {
+    color: #1C2B39;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.formulario-login p {
+    color: #1C2B39;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+.formulario-login form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.formulario-login label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1C2B39;
+}
+
+.formulario-login input {
+    background-color: #E9E7E7;
+    border: none;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.formulario-login .btn-naranja,
+.formulario-login .btn-verde {
+    width: 220px;
+    align-self: center;
+    margin-top: 15px;
+}
+
+/* ================================= */
+/* PANTALLA SELECCIÓN DE ROL */
+/* ================================= */
+
+.tarjeta-rol {
+    position: relative;
+    width: 700px;
+    background-color: #FFFFFF;
+    padding: 40px 60px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.tarjeta-rol h2 {
+    color: #FF8A00;
+    font-size: 30px;
+}
+
+.tarjeta-rol h3 {
+    color: #FF8A00;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.roles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.rol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.rol img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+/*
+.icono-rol {
+    font-size: 130px;
+    margin-bottom: 20px;
+}
+*/
+.rol button {
+    width: 170px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 25px;
+}
+
+.rol .pequeno {
+    color: #000000;
+}
+
+/* ================================= */
+/* PANTALLA REGISTRO CLIENTE */
+/* ================================= */
+
+.tarjeta-registro {
+    position: relative;
+    width: 560px;
+    background-color: #FFFFFF;
+    padding: 50px 70px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.icono-cliente {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-registro h2 {
+    color: #FF8A00;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.tarjeta-registro form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.tarjeta-registro label {
+    color: #FF8A00;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.tarjeta-registro input {
+    background-color: #D9D9D9;
+    border: none;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.tarjeta-registro .btn-azul {
+    align-self: center;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media screen and (max-width: 900px) {
+    .tarjeta-login {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .imagen-login {
+        width: 100%;
+        height: 250px;
+    }
+
+    .formulario-login {
+        width: 100%;
+    }
+
+    .tarjeta-rol,
+    .tarjeta-registro {
+        width: 90%;
+    }
+
+    .roles {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
