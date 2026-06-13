@@ -2026,10 +2026,10 @@ img {
     min-width: 200px;
 }
 
-.logo {
-    width: 29px;
-    height: 33px;
-    object-fit: contain;
+.logo-completo-consumidor {
+    height: 30px; 
+    width: auto;  /* Mantiene la proporción original de la imagen */
+    display: block;
 }
 
 .brand {
