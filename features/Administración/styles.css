@@ -1,0 +1,513 @@
+    #btn_Dashboard{
+    color:#FAFAFA;
+    background-color:#4CAF50;
+    font-family: sans-serif;
+    border-radius: 99px;
+    font-size: 18.4px;
+    border-style:hidden;
+    padding:7.8px 14px 7.8px 14px;
+    }
+    img[alt="logo_consumidor"]{
+        max-width:179.31;
+        width:100%;
+    }
+    #btn_Dashboard:hover{
+        background-color: #FF8A00;
+        cursor:pointer;
+    }
+    .cabecera_plataforma img{
+        max-width:179.31px;
+        width:100%;
+        height:33px;
+    }
+    .cabecera_plataforma{
+        max-width:1441px;
+        height:64px;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .usuario_bloque {
+        display: flex;
+        flex-direction: row;
+        gap:24px;
+        align-items: center;
+    }
+    .btn {
+        color:#5A6A77;
+        font-size:13px;
+        max-width:194.27px;
+        height:42px;
+        gap:10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    .btn img {
+        /* Elimina el margin: auto */
+        padding-left: 12px;
+    }
+
+    .btn a {
+        /* Elimina el margin: auto y el padding-top */
+        padding-left: 10px; 
+    }
+    .btn:hover{
+        background-color:#E3FCE4;
+        color:#4CAF50;
+        cursor:pointer;
+        border-radius: 12px;
+    }
+
+    nav{
+        display:flex;   
+        flex-direction:column;
+        justify-content: flex-start;
+        flex-wrap:wrap;
+        background-color:#F0F2F5;
+        max-width:220px;
+        width:100%;
+        max-height:960px;
+        height:100%;
+    }
+    nav h5{
+        padding-top:35px;
+        padding-left:25px;
+        font-size:10px;
+        color:#9AAAB8;
+    }
+    #contenedor-principal {
+        display: flex;
+        flex-direction: row;
+    }
+    .main-header{
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    main{
+        max-width: 1221px;
+        width: 100%;
+        min-height: 960px;
+        background-color: #F0F2F5;
+        padding: 20px 40px; /* Controla los espacios internos ordenadamente */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column; /* Cambiado a column para que la tabla vaya abajo */
+        gap: 24px;  
+    }
+    main h1{
+        margin:0;
+        color:#1C2B39;
+        font-family: sans-serif;
+    }
+
+    #btn_Agregar{
+        width: 100%;
+        max-width:132px;
+        height:34px;
+        background-color:#4CAF50;
+        color:#FAFAFA;
+        font-size: 13px;
+        border-radius: 99px;
+        border-style: hidden;
+        margin:0;
+    }
+     #btn_Agregar:hover{
+        background-color:#FF8A00;
+        cursor:pointer;
+     }
+
+     /* --- ESTILOS DE LA TABLA (IGUAL A FIGMA) --- */
+.tabla-container {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabla_platos {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.tabla_platos th {
+    color: #9AAAB8;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 16px 12px;
+    border-bottom: 1px solid #EAEFF3;
+}
+
+.tabla_platos td {
+    color: #1C2B39;
+    font-size: 14px;
+    padding: 16px 12px;
+    border-bottom: 1px solid #EAEFF3;
+}
+
+/* Etiquetas de Estado (Badges) */
+.badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.badge.con-stock {
+    background-color: #E3FCE4;
+    color: #4CAF50;
+}
+.badge.sin-stock {
+    background-color: #FFEBEB;
+    color: #FF4D4D;
+}
+
+/* Botones de acción dentro de la tabla */
+.acciones-celda {
+    display: flex;
+    gap: 8px;
+}
+.btn-editar {
+    background-color: #F0F2F5;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #5A6A77;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btn-eliminar {
+    background-color: #FFEBEB;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*Aqui empieza el modal de creafr plato */
+
+body{
+    background-color: #F0F2F5;
+}
+
+
+.fondo_card{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+
+    background-color:rgba(0,0,0,0.5);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.card_NewDish{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#FAFAFA;
+    border-radius: 50px;
+    width:100%;
+    max-width:400px;
+    height:100%;
+    max-height:500px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.05);
+    font-family: Verdana;
+    margin:20px 506px 230px 313px;
+}
+
+.card_NewDish h1{
+    font-weight: bold;
+    margin-top: 29px;
+    color:#4CAF50;
+}
+
+.card_NewDish span{
+    font-size: 13px;
+}
+#Crear_plato{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datos_plato{
+    display:flex;
+    gap:4px;
+    font-size:13px;
+    flex-direction: column;
+}
+.datos_plato label{
+    padding-left:61px;
+    justify-content: left;
+}
+
+.datos_plato button[type="submit"]{
+    background-color: #4CAF50;
+    color:#FAFAFA;
+    border-radius: 99px;
+    font-size:13px;
+    max-height:34px;
+    max-width:132px;
+    margin:31px 133px 4px 133px;
+    padding: 9px 45px 9px 44px;
+    border:none;
+    cursor:pointer;
+}
+
+.datos_plato button[type="cancelar"]{
+    background-color: #DC2626;
+    color:#FAFAFA;
+    border-radius: 99px;
+    font-size:13px;
+    max-height:34px;
+    max-width:132px;
+    margin:0px 133px 43px 133px;
+    padding: 9px 43px 9px 45px;
+    border:none;
+    cursor:pointer;
+}
+
+.datos_plato input{
+    width:100%;
+    max-width:283.38px;
+    height:100%;
+    max-height:38px;
+    background-color: #E0E0E0;
+    border-radius:10px;
+    border:none;
+    margin: 0px 59.07px 0px 56.39px;
+}
+
+#plus-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    
+    /* Flexbox interno: Esto es el truco mágico para centrar el "+" */
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    cursor: pointer;              
+}
+
+/* Le damos tamaño y estilo al texto "+" dentro del contenedor */
+#plus-icon span {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333333;
+    line-height: 1;         
+}
+
+/*Ocualta el boton subir imagen*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.campo-error{
+    border: 2px solid #DC2626 !important;
+}
+
+#plus-icon.campo-error{
+    border: 2px solid #DC2626;
+}
+/* --- ESTILOS DEL MODAL (VENTANA EMERGENTE) --- */
+
+
+   @media (max-width: 768px) {
+
+    .cabecera_plataforma {
+        max-width: 100%;
+        height: auto;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .usuario_bloque {
+        gap: 12px;
+    }
+
+    #btn_Dashboard {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    #contenedor-principal {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    nav {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    nav h5 {
+        display: none;
+    }
+
+    .btn {
+        min-width: 120px;
+        max-width: none;
+        height: 42px;
+        flex-shrink: 0;
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    .btn img {
+        padding-left: 0;
+    }
+
+    .btn a {
+        padding-left: 4px;
+    }
+
+    main {
+        max-width: 100%;
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        gap: 18px;
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    #btn_Agregar {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .tabla-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .tabla_platos {
+        min-width: 700px;
+    }
+
+    .card_NewDish {
+        width: 90%;
+        max-width: 400px;
+        max-height: none;
+        height: auto;
+        margin: 0;
+        border-radius: 28px;
+        padding-bottom: 20px;
+    }
+
+    .card_NewDish h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .datos_plato {
+        width: 100%;
+        align-items: center;
+    }
+
+    .datos_plato label {
+        width: 80%;
+        padding-left: 0;
+    }
+
+    .datos_plato input {
+        width: 80%;
+        max-width: none;
+        height: 38px;
+        margin: 0;
+    }
+
+    .datos_plato button[type="submit"],
+    .datos_plato button[type="cancelar"] {
+        width: 80%;
+        max-width: none;
+        margin: 12px 0 0 0;
+        padding: 9px 0;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+
+    .cabecera_plataforma img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .usuario_bloque {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    main h1 {
+        font-size: 22px;
+    }
+
+    .tabla_platos th,
+    .tabla_platos td {
+        font-size: 12px;
+        padding: 12px 8px;
+    }
+
+    .acciones-celda {
+        flex-direction: column;
+    }
+
+    .card_NewDish {
+        width: 92%;
+        border-radius: 22px;
+    }
+
+    #plus-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
