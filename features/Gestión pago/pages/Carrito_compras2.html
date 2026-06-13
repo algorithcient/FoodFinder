@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder - Checkout Paso 2: Pago</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="../../../Assests/icons/FF_Logo_Consu.png" alt="FoodFinder Logo" class="logo-completo-consumidor">
+        </div>
+        
+        <div class="navbar-center">
+            <input type="text" placeholder="Buscar restaurantes, platos…" class="search-bar">
+        </div>
+        
+        <div class="navbar-right">
+            <button class="btn-active-orders">Pedidos Activos</button>
+            <div class="nav-icons">
+                <img src="../../../Assests/Icons/carrito.png" alt="Carrito de compras" class ="icon">
+                <img src="../../../Assests/Icons/perfil.png" alt="Perfil" class ="icon">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-container">
+        <!-- Breadcrumb -->
+        <p class="breadcrumb">Checkout — Paso 2: Pago</p>
+
+        <!-- Step bar -->
+        <div class="step-bar">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <span class="step-label">Dirección y entrega</span>
+            </div>
+            <div class="step-divider"></div>
+            <div class="step-item active">
+                <div class="step-number">2</div>
+                <span class="step-label">Pago</span>
+            </div>
+        </div>
+
+        <!-- Content grid -->
+        <div class="content-grid">
+            <!-- Left: Payment methods -->
+            <section class="payment-section">
+                <h2 class="section-title">💳 Método de pago</h2>
+
+                <!-- Payment options -->
+                <div class="payment-options">
+                    <label class="payment-option selected">
+                        <input type="radio" name="payment" value="card" checked>
+                        <div class="radio-custom"></div>
+                        <span class="emoji">💳</span>
+                        <span class="option-text">Tarjeta de<br>crédito/débito</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        <div class="radio-custom"></div>
+                        <span class="emoji">💵</span>
+                        <span class="option-text">Efectivo<br>al<br>delivery</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="yape">
+                        <div class="radio-custom"></div>
+                        <span class="emoji">📱</span>
+                        <span class="option-text">Yape /<br>Plin</span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="transfer">
+                        <div class="radio-custom"></div>
+                        <span class="emoji">🏦</span>
+                        <span class="option-text">Transferencia</span>
+                    </label>
+                </div>
+
+                <!-- Card fields -->
+                <div class="card-fields">
+                    <div class="form-group">
+                        <label>Número de tarjeta</label>
+                        <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Vencimiento</label>
+                            <input type="text" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="password" placeholder="•••" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="actions">
+                    <button class="btn-secondary">← Volver</button>
+                    <button class="btn-primary">Confirmar<br>pedido →</button>
+                </div>
+            </section>
+
+            <!-- Right: Order summary -->
+            <aside class="order-summary">
+                <div class="summary-card">
+                    <h3>Tu pedido</h3>
+                    
+                    <div class="order-items">
+                        <div class="order-item">
+                            <span>1x Ceviche Clásico</span>
+                            <span class="price">S/ 28.00</span>
+                        </div>
+                        <div class="order-item">
+                            <span>2x Salmon Roll Premium</span>
+                            <span class="price">S/ 90.00</span>
+                        </div>
+                        <div class="order-item">
+                            <span>1x Smash Burger Doble</span>
+                            <span class="price">S/ 38.00</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>S/ 156.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Delivery</span>
+                            <span>S/ 3.50</span>
+                        </div>
+                        <div class="total-row final">
+                            <span>Total</span>
+                            <span>S/ 159.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="estimated-time">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8C14.6668 4.3181 11.6821 1.33333 8.00016 1.33333C4.31826 1.33333 1.3335 4.3181 1.3335 8C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667Z" stroke="#555555" stroke-width="1.33333" stroke-linecap="round"/>
+                        <path d="M8 4V8L10.6667 9.33333" stroke="#555555" stroke-width="1.33333" stroke-linecap="round"/>
+                    </svg>
+                    <span>Tiempo estimado: <strong>25-35 min</strong></span>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
