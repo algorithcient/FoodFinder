@@ -10,7 +10,7 @@
 
     <main class="contenedor-registro">
 
-        <!-- Pantalla 1: Login -->
+        <!-- pantalla 1: login -->
         <section id="pantallaLogin" class="pantalla activa">
             <div class="tarjeta-login">
                 <div class="imagen-login"></div>
@@ -36,7 +36,7 @@
             </div>
         </section>
 
-        <!-- Pantalla 2: Selección de rol -->
+        <!-- pantalla 2: selección de rol -->
         <section id="pantallaRol" class="pantalla">
             <div class="tarjeta-rol">
                 <button id="volverLogin" class="btn-volver">←</button>
@@ -58,7 +58,7 @@
             </div>
         </section>
 
-        <!-- Pantalla 3: Registro cliente -->
+        <!-- pantalla 3: registro cliente -->
         <section id="pantallaRegistro" class="pantalla">
             <div class="tarjeta-registro">
                 <button id="volverRol" class="btn-volver">←</button>
@@ -67,20 +67,31 @@
 
                 <h2>Ingrese sus datos</h2>
 
-                <form>
+                <form id="formRegistroCliente">
                     <label>Nombre completo</label>
-                    <input type="text">
+                    <input type="text" id="nombreCliente">
+
+                    <p id="errorNombre" class="mensaje-error"></p>
 
                     <label>Correo electrónico</label>
-                    <input type="email">
+                    <input type="email" id="correoCliente">
+
+                    <p id="errorCorreo" class="mensaje-error"></p>
 
                     <label>Teléfono/Celular</label>
-                    <input type="tel">
+                    <input type="tel" id="telefonoCliente">
+
+                    <p id="errorTelefono" class="mensaje-error"></p>
 
                     <label>Contraseña</label>
-                    <input type="password">
+                    <input type="password" id="passwordCliente">
 
-                    <button type="button" class="btn-azul">Guardar cuenta</button>
+                    <p id="errorPassword" class="mensaje-error"></p>
+
+                    <button type="button" id="btnGuardarCuenta" class="btn-azul">Guardar cuenta</button>
+
+                    <p id="mensajeExito" class="mensaje-exito"></p>
+                    <p id="mensajeSugerencia" class="mensaje-sugerencia"></p>
                 </form>
             </div>
         </section>
