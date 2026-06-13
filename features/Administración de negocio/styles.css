@@ -1,0 +1,105 @@
+#btn_Dashboard{
+color:#FAFAFA;
+background-color:#4CAF50;
+font-family: sans-serif;
+border-radius: 99px;
+font-size: 18.4px;
+border-style:hidden;
+padding:7.8px 14px 7.8px 14px;
+}
+#btn_Dashboard:hover{
+    background-color: #FF8A00;
+    cursor:pointer;
+}
+.cabecera_plataforma img{
+    max-width:179.31px;
+    width:100%;
+    height:33px;
+}
+.cabecera_plataforma{
+    max-width:1441px;
+    height:64px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.usuario_bloque {
+    display: flex;
+    flex-direction: row;
+    gap:24px;
+    align-items: center;
+}
+.btn {
+    color:#5A6A77;
+    font-size:13px;
+    max-width:194.27px;
+    height:42px;
+    gap:10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.btn img,.btn a{
+    margin:auto;
+    padding-left:12px;
+    padding-top:11px;
+}
+.btn:hover{
+    background-color:#E3FCE4;
+    color:#4CAF50;
+    cursor:pointer;
+    border-radius: 12px;
+}
+nav{
+    display:flex;   
+    flex-direction:column;
+    justify-content: flex-start;
+    margin:auto;
+    flex-wrap:wrap
+}
+nav h5{
+    font-size:10px;
+    color:#9AAAB8;
+}
+
+@media (max-width: 768px) {
+    .cabecera_plataforma {
+        height: auto;
+        padding: 10px;
+        flex-direction: column; 
+        gap: 12px;
+    }
+
+    .usuario_bloque {
+        gap: 12px; 
+    }
+
+    #btn_Dashboard {
+        font-size: 14px; 
+        padding: 6px 10px;
+    }
+
+    
+    nav {
+        flex-direction: row; 
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+        padding: 10px 0;
+    }
+
+    nav h5 {
+        display: none; 
+    }
+
+    .btn {
+        max-width: none;
+        flex: 1;
+        text-align: center;
+        font-size: 11px; 
+    }
+}

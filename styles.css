@@ -250,6 +250,49 @@ span{
     color:#777777;
     font-size: 12px;
 }
+
+.lista_flujo{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+.lista_flujo li{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:18px;
+}
+
+.numero_consumidor{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background-color:#FF8A00;
+    color:#FAFAFA;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    font-weight:bold;
+    flex-shrink:0;
+    font-family:sans-serif;
+}
+
+.numero_emprendedor{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background-color:#4CAF50;
+    color:#FAFAFA;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    font-weight:bold;
+    flex-shrink:0;
+    font-family:sans-serif;
+}
 /*Fin de la seccion flujos*/
 .Seccion_testimonio{
     color:#FF8A00;
