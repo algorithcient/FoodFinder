@@ -12,7 +12,7 @@
         <img id="logo" src="/Assests/Icons/LogoPrincipal.svg" alt="logo de la pagina" width=181px height=62px>
         <nav>
             <button class="btnLanding">Inicio</button>
-            <button class="btnLanding">Como funciona</button>
+            <button id="btnComoFunciona" class="btnLanding">Como funciona</button>
             <button class="btnLanding">Sobre nosotros</button>
             <button class="btnLanding">FAQ</button>
             <button id="btnIniciarSesion">Iniciar Sesión</button>
@@ -87,8 +87,8 @@
             </div>
             </div>
         </section>
-
-        <section class="Seccion_Comofunciona">
+s
+        <section id="como_funciona" class="Seccion_Comofunciona">
             <div>
                 <h2>Como funciona</h2>
                 <p>Dos flujos, un solo marketplace</p>
@@ -96,26 +96,30 @@
             <div class="contenedor_flujos"> 
             <div class="flujo_consumidor">
                 <h2>Flujo consumidor</h2>
-                    <ol>
+                    <ol class="lista_flujo">
                         <li>
-                             <div>
+                             <span class="numero_consumidor">1</span>
+                            <div>
                                 <h3>Registrate</h3>
-                                <p>Crea tu cuenta como consumidro</p>
+                                <p>Crea tu cuenta como consumidor</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_consumidor">2</span>
                             <div>
-                                <h3>Busca y filtra</h3>
+                                <h3>Busca y filtra</h3> 
                                 <p>Por plato, precio, distrito o promoción</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_consumidor">3</span>
                             <div>
                                 <h3>Agrega al carrito</h3>
                                 <p>Selecciona tus platos favoritos</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_consumidor">4</span>
                             <div>
                                 <h3>Paga y sigue tu pedido</h3>
                                 <p>Seguimiento en tiempo real</p>
@@ -128,26 +132,30 @@
         
             <div class="flujo_emprendedor">
                 <h2>Flujo emprendedor</h2>
-                    <ol>
+                    <ol class="lista_flujo">
                         <li>
+                            <span class="numero_emprendedor">1</span>
                             <div>
                                 <h3>Registra tu negocio</h3>
                                 <p>Crea tu cuenta como emprendedor</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_emprendedor">2</span>
                             <div>
                                 <h3>Sube tu carta digital</h3>
                                 <p>platos, precios y promociones</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_emprendedor">3</span>
                             <div>
                                 <h3>Recibe pedidos</h3>
                                 <p>Gestiona y comfirma desde el dashboard</p>
                             </div>
                         </li>
                         <li>
+                            <span class="numero_emprendedor">4</span>
                             <div>
                                 <h3>Revisa tus estadisticas</h3>
                                 <p>ventas, ingresos y platos mas pedidos</p>
@@ -174,5 +182,6 @@
         <p>terminos</p>
         <p>Preferencia de cookies</p>
     </footer>
+    <script src="/index.js"></script>
 </body>
 </html>
