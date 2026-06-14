@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - FoodFinder</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <main class="contenedor-registro">
+
+        <!-- pantalla 1: login -->
+        <section id="pantallaLogin" class="pantalla activa">
+            <div class="tarjeta-login">
+                <div class="imagen-login"></div>
+
+                <div class="formulario-login">
+                    <button type="button" class="btn-volver">←</button>
+
+                    <img id="logo" src="/Assests/Icons/Logo_Sin_Fondo.png" alt="Logo FoodFinder" width="90" height="90">
+
+                    <h1>Iniciar Sesión</h1>
+                    <p>Ingrese su correo y contraseña</p>
+
+                    <form>
+                        <label>Correo</label>
+                        <input type="email" id="correoLogin" placeholder="Ingrese su correo">
+
+                        <label>Contraseña</label>
+                        <input type="password" id="passwordLogin" placeholder="Ingrese su contraseña">
+
+                        <p id="mensajeLogin" class="mensaje-error"></p>
+
+                        <button type="button" id="btnIniciarSesionLogin" class="btn-naranja">Iniciar Sesión</button>
+                        <button type="button" id="btnCrearCuenta" class="btn-verde">Crear Cuenta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- pantalla 2: selección de rol -->
+        <section id="pantallaRol" class="pantalla">
+            <div class="tarjeta-rol">
+                <button type="button" id="volverLogin" class="btn-volver">←</button>
+
+                <h2>REGÍSTRATE</h2>
+                <h3>Seleccione su rol</h3>
+
+                <div class="roles">
+                    <div class="rol">
+                        <img id="logo-cocinero" src="/Assests/Icons/chef.png" alt="Cocinero" width="184" height="184">
+                        <button type="button" id="btnCocinero" class="btn-verde">Cocinero</button>
+                    </div>
+
+                    <div class="rol">
+                        <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Consumidor" width="173" height="173">
+                        <button type="button" id="btnConsumidor" class="btn-naranja pequeno">Consumidor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- pantalla 3: registro -->
+        <section id="pantallaRegistro" class="pantalla">
+            <div id="tarjetaRegistro" class="tarjeta-registro registro-cliente">
+                <button type="button" id="volverRol" class="btn-volver">←</button>
+
+                <img id="iconoRegistroRol" src="/Assests/Icons/consumidor.png" alt="Rol seleccionado" width="70" height="90">
+
+                <h2 id="tituloRegistro">Ingrese sus datos</h2>
+
+                <form id="formRegistroCliente">
+                    <label>Nombre completo</label>
+                    <input type="text" id="nombreCliente">
+
+                    <p id="errorNombre" class="mensaje-error"></p>
+
+                    <label>Correo electrónico</label>
+                    <input type="email" id="correoCliente">
+
+                    <p id="errorCorreo" class="mensaje-error"></p>
+
+                    <label>Teléfono/Celular</label>
+                    <input type="tel" id="telefonoCliente">
+
+                    <p id="errorTelefono" class="mensaje-error"></p>
+
+                    <div id="grupoDireccionNegocio" class="grupo-direccion-negocio">
+                        <label>Dirección de negocio</label>
+                        <input type="text" id="direccionNegocio">
+
+                        <p id="errorDireccionNegocio" class="mensaje-error"></p>
+                    </div>
+
+                    <label>Contraseña</label>
+                    <input type="password" id="passwordCliente">
+
+                    <p id="errorPassword" class="mensaje-error"></p>
+
+                    <button type="button" id="btnGuardarCuenta" class="btn-azul">Guardar cuenta</button>
+
+                    <p id="mensajeExito" class="mensaje-exito"></p>
+                    <p id="mensajeSugerencia" class="mensaje-sugerencia"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/cuenta.js"></script>
+</body>
+</html>
