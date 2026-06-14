@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Food Finder - El Rincón del Sabor</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body class="home-body">
+    
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="../../../Assests/icons/FF_Logo_Consu.png" alt="FoodFinder Logo" class="logo-completo-consumidor" style="height: 33px;">
+        </div>
+        <div class="navbar-center">
+            <input type="text" placeholder="Buscar restaurantes, platos…" class="search-bar">
+        </div>
+        <div class="navbar-right">
+            <button class="btn-active-orders">Mis Pedidos</button>
+            <div class="nav-icons">
+                <img src="../../../Assests/Icons/carrito.png" alt="Carrito de compras" class="icon">
+                <img src="../../../Assests/Icons/perfil.png" alt="Perfil" class="icon">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <nav class="breadcrumb">
+            Inicio <span class="separator">›</span> Restaurantes <span class="separator">›</span> <span class="current">El Rincón del Sabor</span>
+        </nav>
+
+        <div class="restaurant-hero-container">
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h1>El Rincón del Sabor</h1>
+                    <p>Cocina Peruana · Miraflores, Lima</p>
+                    <span class="badge-open-now">Abierto ahora</span>
+                </div>
+                <div class="hero-logo-circle"></div>
+            </div>
+            
+            <div class="hero-stats-bar">
+                <div class="stat-item">
+                    <span class="stat-icon" style="color: #FF8A00;">★</span>
+                    <div class="stat-info">
+                        <strong>4.9</strong>
+                        <span>Calificación</span>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-icon" style="color: #60A5FA;">🌐</span>
+                    <div class="stat-info">
+                        <strong>Lun–Dom 12pm–10pm</strong>
+                        <span>Horario</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories-tabs">
+            <button class="cat-tab active">Más pedidos</button>
+            <button class="cat-tab">Ceviches y tiraditos</button>
+            <button class="cat-tab">Platos de fondo</button>
+            <button class="cat-tab">Bebidas</button>
+            <button class="cat-tab">Postres</button>
+        </div>
+
+        <div class="content-grid">
+            
+            <div class="menu-column">
+                
+                <section class="menu-category-section">
+                    <h2 class="category-title">Más pedidos</h2>
+                    <div class="menu-items-grid">
+                        
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <span class="badge top-left promo">Más vendido</span>
+                                <img src="../../../Assests/img/ceviche clasico.jpg" alt="Ceviche Clásico">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Ceviche Clásico</h4>
+                                    <p>Pescado fresco marinado en limón, ají limo, cebolla morada y culantro. Con choclo y camote.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <div class="price-row">
+                                            <span class="current-price">S/. 32</span>
+                                            <span class="old-price">S/. 40</span>
+                                        </div>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/lomo saltado.jpg" alt="Lomo Saltado">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Lomo Saltado</h4>
+                                    <p>Tiras de lomo fino salteado con tomate, cebolla, ají amarillo y papas fritas. Con arroz blanco.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 38</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/causa de pollo.jpg" alt="Causa de Pollo">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Causa de Pollo</h4>
+                                    <p>Papa amarilla aliñada con limón y ají amarillo, rellena de pollo desmenuzado con mayonesa y palta.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 22</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/arroz con leche.jpg" alt="Arroz con Leche">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Arroz con Leche</h4>
+                                    <p>Cremoso arroz cocido en leche con canela y vainilla. Presentado frío con canela en polvo.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 14</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <section class="menu-category-section">
+                    <h2 class="category-title">Ceviches y Tiraditos</h2>
+                    <div class="menu-items-grid">
+                        
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/ceviche mixto.jpg" alt="Ceviche Mixto">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Ceviche Mixto</h4>
+                                    <p>Pescado, mariscos y pulpo en leche de tigre. Con chifles y zarandaja.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 45</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/tiradito.jpg" alt="Tiradito de Lenguado">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Tiradito de Lenguado</h4>
+                                    <p>Finas láminas de lenguado en salsa de ají amarillo, limón y culantro.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 36</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <span class="badge top-left out-of-stock">Sin stock</span>
+                                <img src="../../../Assests/img/ceviche de pulpo.jpg" alt="Ceviche Pulpo" style="opacity: 0.5;">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Ceviche de Pulpo</h4>
+                                    <p>Pulpo cocinado en leche de tigre picante con ají rocoto y cebolla morada.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price" style="color: #9AAAB8;">S/. 48</span>
+                                    </div>
+                                    <button class="btn-agregar disabled" disabled>Agotado</button>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="menu-card">
+                            <div class="menu-card-img-wrapper">
+                                <img src="../../../Assests/img/leche de tigre.jpg" alt="Leche de Tigre">
+                            </div>
+                            <div class="menu-card-content">
+                                <div class="menu-card-info">
+                                    <h4>Leche de Tigre</h4>
+                                    <p>El jugo del ceviche servido como shot o en vaso. Reconstituyente y picante.</p>
+                                </div>
+                                <div class="menu-card-bottom">
+                                    <div class="price-status">
+                                        <span class="current-price">S/. 10</span>
+                                        <span class="status-pill available">Disponible</span>
+                                    </div>
+                                    <button class="btn-agregar">Agregar</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            </div>
+
+            <aside class="sidebar-column">
+                
+                <div class="summary-card">
+                    <h3>Reseñas y calificaciones</h3>
+                    
+                    <div class="rating-header">
+                        <div class="big-score">4.9</div>
+                        <div class="rating-stars-block">
+                            <div class="stars-gold">★★★★★</div>
+                            <div class="reviews-count">521 reseñas</div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="review-avatar">CR</div>
+                                <div class="review-author">
+                                    <strong>Carlos R.</strong>
+                                    <span>Hace 1 día</span>
+                                </div>
+                                <span class="review-stars" style="margin-left: auto; color:#F59E0B;">★★★★★</span>
+                            </div>
+                            <p>El ceviche clásico es increíble, el pescado fresquísimo y la leche de tigre perfecta. Sin duda el mejor de Miraflores.</p>
+                        </div>
+                        
+                        <div class="review-item" style="margin-top: 16px;">
+                            <div class="review-header">
+                                <div class="review-avatar">PM</div>
+                                <div class="review-author">
+                                    <strong>Patricia M.</strong>
+                                    <span>Hace 3 días</span>
+                                </div>
+                                <span class="review-stars" style="margin-left: auto; color:#F59E0B;">★★★★<span style="color:#E4E8ED">★</span></span>
+                            </div>
+                            <p>El lomo saltado llegó caliente y bien presentado. Las papas muy crocantes. Excelente servicio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Información general</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <div class="info-text">
+                                <strong>Jr. Schell 320, Miraflores</strong>
+                                <span>Lima, Perú</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">🕒</span>
+                            <div class="info-text">
+                                <strong>Lun–Dom 12:00pm – 10:00pm</strong>
+                                <span style="color: #4CAF50; font-weight: 600;">Abierto ahora</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon" style="color: #E91E63;">📞</span>
+                            <div class="info-text">
+                                <strong>+51 984 123 456</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div> </main>
+</body>
+</html>

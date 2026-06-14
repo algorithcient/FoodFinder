@@ -2117,7 +2117,7 @@ img {
     padding: 40px 20px;
 }
 
-.breadcrumb {
+/*.breadcrumb {
     font-family: 'Syne', sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -2125,6 +2125,35 @@ img {
     text-transform: uppercase;
     color: #999;
     margin-bottom: 20px;
+}
+    */
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; 
+    font-size: 13px;
+    color: #9AAAB8;
+    margin-bottom: 12px; /* Antes estaba en 24px */
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+    /* ESTAS DOS LÍNEAS SON LA MAGIA PARA QUE NO BAJE: */
+    flex-wrap: nowrap; 
+    white-space: nowrap; 
+}
+
+.breadcrumb .separator {
+    color: #FF8A00; 
+    margin: 0;
+}
+
+.breadcrumb .current {
+    color: #FF8A00; 
 }
 
 /* Step bar */
@@ -3118,3 +3147,804 @@ body{
         height: 70px;
     }
 }
+
+/* ==========================================
+   HOME RESPONSIVE (Catálogo)
+   ========================================== */
+
+.home-body {
+    background-color: #FAFAFA;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.main-home-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #1C2B39;
+    background-image: url('img/pseudo-before.png'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    color: white;
+}
+
+.hero-tag {
+    background-color: rgba(255, 138, 0, 0.2);
+    border: 1px solid rgba(255, 138, 0, 0.4);
+    color: #FFB84D;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+}
+
+/* --- Filtros --- */
+.filters-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E4E8ED;
+}
+
+.btn-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #E4E8ED;
+    padding: 12px 20px;
+    border-radius: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.btn-filter img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain; /* Asegura que no se deforme */
+}
+
+.categories-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px; /* Espacio para el scrollbar */
+}
+
+.categories-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #E4E8ED;
+    border-radius: 14px;
+    padding: 16px 24px;
+    min-width: 90px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cat-pill.active {
+    background: #FFF4E6;
+    border-color: #FF8A00;
+}
+
+.cat-pill.active .cat-label {
+    color: #FF8A00;
+}
+
+.cat-icon {
+    font-size: 24px;
+}
+
+.cat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5A6A77;
+}
+
+/* --- Secciones de Catálogo --- */
+.catalog-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.section-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: #1C2B39;
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: #5A6A77;
+}
+
+.see-all {
+    color: #FF8A00;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* --- Grid de Restaurantes --- */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.resto-card {
+    background: white;
+    border: 1px solid #E4E8ED;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.resto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.resto-img-wrapper {
+    position: relative;
+    height: 160px;
+}
+
+.resto-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-open {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-open .dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.resto-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.resto-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #1C2B39;
+    margin-bottom: 4px;
+}
+
+.cuisine {
+    font-size: 13px;
+    color: #9AAAB8;
+    margin-bottom: 12px;
+}
+
+.resto-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.star {
+    color: #1C2B39;
+    font-weight: 500;
+}
+
+.reviews {
+    color: #9AAAB8;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: #F0F2F5;
+    color: #5A6A77;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.resto-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1px solid #E4E8ED;
+    background: #FAFAFA;
+}
+
+.delivery-free {
+    color: #4CAF50;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btn-ver-carta {
+    background: #FF8A00;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* --- Grid de Platos Destacados --- */
+.plates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.plate-card {
+    background: white;
+    border: 1px solid #E4E8ED;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.img-container {
+    position: relative;
+}
+
+.plate-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.badge-status {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-status.error { background: #FEE2E2; color: #DC2626; }
+.badge-status.promo { background: #FFF4E6; color: #FF8A00; }
+.badge-status.warning { background: #FFF9C4; color: #F57F17; }
+
+.plate-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.plate-details h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #1C2B39;
+    margin-bottom: 4px;
+}
+
+.plate-resto {
+    font-size: 13px;
+    color: #9AAAB8;
+    margin-bottom: 8px;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #F59E0B;
+    margin-bottom: 16px;
+}
+
+/* Icono de la estrella en las tarjetas de platos */
+.star-rating img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.plate-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1C2B39;
+}
+
+.price-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.promo-price { color: #FF8A00; }
+.old-price { 
+    color: #9AAAB8; 
+    font-size: 14px; 
+    text-decoration: line-through; 
+}
+
+.btn-add {
+    background: #FF8A00;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-add.disabled {
+    background: #F0F2F5;
+    color: #9AAAB8;
+    cursor: not-allowed;
+}
+
+/* --- Responsive para Home --- */
+@media (max-width: 768px) {
+    .main-home-container {
+        padding: 20px 16px;
+    }
+    
+    .filters-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* ==========================================
+   DETALLES RESTAURANTE
+   ========================================== */
+
+/* Hero Banner (Fondo Marrón y tarjeta blanca inferior) */
+.restaurant-hero-container {
+    margin-bottom: 16px; /* Antes estaba en 24px */
+    border-radius: 20px;
+    box-shadow: 0px 4px 16px rgba(0,0,0,0.04);
+    background: white;
+    overflow: hidden;
+}
+
+.hero-banner {
+    background-color: #4A3320; /* Color marrón del figma */
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.hero-text p {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.badge-open-now {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.hero-logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.hero-stats-bar {
+    display: flex;
+    padding: 16px 40px;
+    gap: 24px;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-icon {
+    font-size: 20px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info strong {
+    font-size: 15px;
+    color: #1C2B39;
+}
+
+.stat-info span {
+    font-size: 12px;
+    color: #9AAAB8;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #E4E8ED;
+}
+
+/* Categorías (Píldoras) */
+.categories-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px; /* Antes estaba en 32px */
+    overflow-x: auto;
+}
+
+.categories-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.cat-tab {
+    background: white;
+    border: 1px solid #E4E8ED;
+    color: #5A6A77;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 99px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.cat-tab.active {
+    background: #1C2B39;
+    color: white;
+    border-color: #1C2B39;
+}
+
+/* Tarjetas de Platos (El arreglo a las imágenes a la izquierda) */
+.menu-category-section {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #1C2B39;
+    /* Cambiamos el primer valor (margin-top) a 0 */
+    margin: 0 0 16px 0; /* Antes era: 32px 0 16px 0 */
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E4E8ED;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+}
+
+/* Sidebar Reseñas e Info */
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Esto crea la separación perfecta entre ambas tarjetas */
+}
+
+.menu-card {
+    display: flex;
+    gap: 16px;
+    background: white;
+    border: 1px solid #E4E8ED;
+    border-radius: 16px;
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+    border-color: #FF8A00;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ⚠️ EL SECRETO PARA QUE LAS ETIQUETAS NO VUELEN ⚠️ */
+.menu-card-img-wrapper {
+    position: relative; /* Atrapa a los hijos "absolute" */
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+}
+
+.menu-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #F0F2F5; /* Color cuadrado por defecto */
+}
+
+/* Las etiquetas posadas sobre la imagen */
+.badge.top-left {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.badge.promo {
+    background-color: #FF8A00;
+    color: white;
+}
+
+.badge.out-of-stock {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.menu-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.menu-card-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: #1C2B39;
+    margin-bottom: 6px;
+}
+
+.menu-card-info p {
+    font-size: 12px;
+    color: #757575;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Footer de la tarjeta con alineación Flex */
+.menu-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 12px;
+}
+
+.price-status {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.current-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1C2B39;
+}
+
+.old-price {
+    font-size: 12px;
+    color: #9AAAB8;
+    text-decoration: line-through;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.status-pill.available {
+    background-color: #E8F5E9;
+    color: #4CAF50;
+}
+
+.btn-agregar {
+    background: #FF8A00;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-agregar.disabled {
+    background: #E4E8ED;
+    color: #9AAAB8;
+    cursor: not-allowed;
+}
+
+/* Sidebar Reseñas (Arriba) e Info (Abajo) */
+.rating-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E4E8ED;
+    margin-bottom: 20px;
+}
+
+.big-score {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #1C2B39;
+    line-height: 1;
+}
+
+.stars-gold {
+    color: #FF8A00;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.reviews-count {
+    color: #9AAAB8;
+    font-size: 12px;
+}
+
+.review-item {
+    margin-bottom: 16px;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.review-avatar {
+    width: 32px;
+    height: 32px;
+    background: #FF8A00;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.review-author strong {
+    display: block;
+    font-size: 14px;
+    color: #1C2B39;
+}
+
+.review-author span {
+    font-size: 11px;
+    color: #9AAAB8;
+}
+
+.review-item p {
+    font-size: 13px;
+    color: #5A6A77;
+    line-height: 1.4;
+}
+
+.info-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.info-text strong { display: block; font-size: 14px; color: #1C2B39; }
+.info-text span { font-size: 13px; color: #5A6A77; }

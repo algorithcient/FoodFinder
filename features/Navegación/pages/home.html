@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Food Finder - Home</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body class="home-body">
+    
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="../../../Assests/icons/FF_Logo_Consu.png" alt="FoodFinder Logo" class="logo-completo-consumidor">
+        </div>
+        
+        <div class="navbar-center">
+            <input type="text" placeholder="Buscar restaurantes, platos…" class="search-bar">
+        </div>
+        
+        <div class="navbar-right">
+            <button class="btn-active-orders">Pedidos Activos</button>
+            <div class="nav-icons">
+                <img src="../../../Assests/Icons/carrito.png" alt="Carrito de compras" class="icon">
+                <img src="../../../Assests/Icons/perfil.png" alt="Perfil" class="icon">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-home-container">
+        
+        <section class="hero-section">
+            <div class="hero-tag">📍 Lima, Perú</div>
+            <h1 class="hero-title">Tu comida favorita,<br><span class="orange">donde estés</span></h1>
+            <p class="hero-subtitle">Encuentra los mejores emprendimientos gastronómicos de Lima cerca de ti con entrega rápida y precios justos.</p>
+        </section>
+
+        <section class="filters-section">
+            <button class="btn-filter">
+                <img src="../../../Assests/Icons/filtros.png" alt="Filtro"> Filtros
+            </button>
+            
+            <div class="categories-scroll">
+                <div class="cat-pill active">
+                    <span class="cat-icon">🍽️</span>
+                    <span class="cat-label">Todo</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🐟</span>
+                    <span class="cat-label">Peruana</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🍣</span>
+                    <span class="cat-label">Japonesa</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🍔</span>
+                    <span class="cat-label">Americana</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🍛</span>
+                    <span class="cat-label">India</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🥗</span>
+                    <span class="cat-label">Saludable</span>
+                </div>
+                <div class="cat-pill">
+                    <span class="cat-icon">🍕</span>
+                    <span class="cat-label">Pizza</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Restaurantes cerca de ti</h2>
+                    <p class="section-subtitle">Basado en tu ubicación · Stock actualizado en tiempo real</p>
+                </div>
+                <a href="#" class="see-all">Ver más →</a>
+            </div>
+
+            <div class="restaurant-grid">
+                <article class="resto-card">
+                    <div class="resto-img-wrapper">
+                        <img src="../../../Assests/img/osaka-sushi-bar.jpg" alt="Osaka Sushi Bar">
+                        <span class="badge-open"><span class="dot"></span> Abierto</span>
+                    </div>
+                    <div class="resto-info">
+                        <h3>Osaka Sushi Bar</h3>
+                        <p class="cuisine">Cocina Japonesa</p>
+                        <div class="resto-meta">
+                            <span class="star">★ 4.9</span>
+                            <span class="reviews">(498)</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Sushi</span>
+                            <span class="tag">Ramen</span>
+                            <span class="tag">Japonesa</span>
+                        </div>
+                    </div>
+                    <div class="resto-footer">
+                        <span class="delivery-free">Delivery gratis</span>
+                        <button class="btn-ver-carta">Ver carta →</button>
+                    </div>
+                </article>
+
+                <article class="resto-card">
+                    <div class="resto-img-wrapper">
+                        <img src="../../../Assests/img/green bowl.jpg" alt="Green Bowl">
+                        <span class="badge-open"><span class="dot"></span> Abierto</span>
+                    </div>
+                    <div class="resto-info">
+                        <h3>Green Bowl</h3>
+                        <p class="cuisine">Comida Saludable</p>
+                        <div class="resto-meta">
+                            <span class="star">★ 4.8</span>
+                            <span class="reviews">(267)</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Bowls</span>
+                            <span class="tag">Vegano</span>
+                            <span class="tag">Saludable</span>
+                        </div>
+                    </div>
+                    <div class="resto-footer" style="justify-content: flex-end;">
+                        <button class="btn-ver-carta">Ver carta →</button>
+                    </div>
+                </article>
+
+                <article class="resto-card">
+                    <div class="resto-img-wrapper">
+                        <img src="../../../Assests/img/el rincon del sabor.jpg" alt="El Rincón del Sabor">
+                        <span class="badge-open"><span class="dot"></span> Abierto</span>
+                    </div>
+                    <div class="resto-info">
+                        <h3>El Rincón del Sabor</h3>
+                        <p class="cuisine">Cocina Peruana</p>
+                        <div class="tags" style="margin-top: auto;">
+                            <span class="tag">Ceviche</span>
+                            <span class="tag">Lomo saltado</span>
+                            <span class="tag">Peruana</span>
+                        </div>
+                    </div>
+                    <div class="resto-footer" style="justify-content: flex-end;">
+                        <button class="btn-ver-carta">Ver carta →</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Platos destacados</h2>
+                    <p class="section-subtitle">Descubre nuevos platos · Stock actualizado en tiempo real</p>
+                </div>
+                <a href="#" class="see-all">Ver más →</a>
+            </div>
+
+            <div class="plates-grid">
+                <article class="plate-card">
+                    <img src="../../../Assests/img/ceviche clasico.jpg" alt="Ceviche Clásico" class="plate-img">
+                    <div class="plate-details">
+                        <h4>Ceviche Clásico</h4>
+                        <p class="plate-resto">El Rincón del Sabor</p>
+                        <span class="star-rating"><img src="../../../Assests/Icons/estrella.png" alt="star"> 4.9</span>
+                        <div class="plate-bottom">
+                            <span class="price">S/ 28</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="plate-card sold-out">
+                    <div class="img-container">
+                        <img src="../../../Assests/img/tagliatelle carbonara.jpg" alt="Tagliatelle" class="plate-img">
+                        <span class="badge-status error">Agotado</span>
+                    </div>
+                    <div class="plate-details">
+                        <h4>Tagliatelle Carbonara</h4>
+                        <p class="plate-resto">La Trattoria Moderna</p>
+                        <span class="star-rating"><img src="../../../Assests/Icons/estrella.png" alt="star"> 4.8</span>
+                        <div class="plate-bottom">
+                            <span class="price">S/ 32</span>
+                            <button class="btn-add disabled">—</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="plate-card">
+                    <div class="img-container">
+                        <img src="../../../Assests/img/pollo chimichurri.jpg" alt="Pollo" class="plate-img">
+                        <span class="badge-status promo">🏷 Promo</span>
+                    </div>
+                    <div class="plate-details">
+                        <h4>Pollo Chimichurri</h4>
+                        <p class="plate-resto">Almuerzo de casa</p>
+                        <span class="star-rating"><img src="../../../Assests/Icons/estrella.png" alt="star"> 4.9</span>
+                        <div class="plate-bottom">
+                            <div class="price-group">
+                                <span class="price promo-price">S/ 36</span>
+                                <span class="price old-price">S/ 45</span>
+                            </div>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="plate-card">
+                    <div class="img-container">
+                        <img src="../../../Assests/img/smash burger doble.jpg" alt="Burger" class="plate-img">
+                        <span class="badge-status warning">Stock bajo</span>
+                    </div>
+                    <div class="plate-details">
+                        <h4>Smash Burger Doble</h4>
+                        <p class="plate-resto">Burger Craft Co.</p>
+                        <span class="star-rating"><img src="../../../Assests/Icons/estrella.png" alt="star"> 4.7</span>
+                        <div class="plate-bottom">
+                            <span class="price">S/ 38</span>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
