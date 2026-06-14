@@ -16,7 +16,8 @@
                 <div class="imagen-login"></div>
 
                 <div class="formulario-login">
-                    <button class="btn-volver">←</button>
+                    <button type="button" class="btn-volver">←</button>
+
                     <img id="logo" src="/Assests/Icons/Logo_Sin_Fondo.png" alt="Logo FoodFinder" width="90" height="90">
 
                     <h1>Iniciar Sesión</h1>
@@ -24,12 +25,14 @@
 
                     <form>
                         <label>Correo</label>
-                        <input type="email" placeholder="Ingrese su correo">
+                        <input type="email" id="correoLogin" placeholder="Ingrese su correo">
 
                         <label>Contraseña</label>
-                        <input type="password" placeholder="Ingrese su contraseña">
+                        <input type="password" id="passwordLogin" placeholder="Ingrese su contraseña">
 
-                        <button type="button" class="btn-naranja">Iniciar Sesión</button>
+                        <p id="mensajeLogin" class="mensaje-error"></p>
+
+                        <button type="button" id="btnIniciarSesionLogin" class="btn-naranja">Iniciar Sesión</button>
                         <button type="button" id="btnCrearCuenta" class="btn-verde">Crear Cuenta</button>
                     </form>
                 </div>
@@ -39,33 +42,33 @@
         <!-- pantalla 2: selección de rol -->
         <section id="pantallaRol" class="pantalla">
             <div class="tarjeta-rol">
-                <button id="volverLogin" class="btn-volver">←</button>
+                <button type="button" id="volverLogin" class="btn-volver">←</button>
 
                 <h2>REGÍSTRATE</h2>
                 <h3>Seleccione su rol</h3>
 
                 <div class="roles">
                     <div class="rol">
-                        <img id="logo-cocinero" src="/Assests/Icons/chef.png" alt="Logo FoodFinder" width="184" height="184">
-                        <button class="btn-verde">Cocinero</button>
+                        <img id="logo-cocinero" src="/Assests/Icons/chef.png" alt="Cocinero" width="184" height="184">
+                        <button type="button" id="btnCocinero" class="btn-verde">Cocinero</button>
                     </div>
 
                     <div class="rol">
-                        <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Logo FoodFinder" width="173" height="173">
-                        <button id="btnConsumidor" class="btn-naranja pequeno">Consumidor</button>
+                        <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Consumidor" width="173" height="173">
+                        <button type="button" id="btnConsumidor" class="btn-naranja pequeno">Consumidor</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- pantalla 3: registro cliente -->
+        <!-- pantalla 3: registro -->
         <section id="pantallaRegistro" class="pantalla">
-            <div class="tarjeta-registro">
-                <button id="volverRol" class="btn-volver">←</button>
+            <div id="tarjetaRegistro" class="tarjeta-registro registro-cliente">
+                <button type="button" id="volverRol" class="btn-volver">←</button>
 
-                <img id="logo-consumidor" src="/Assests/Icons/consumidor.png" alt="Logo FoodFinder" width="47" height="77">
+                <img id="iconoRegistroRol" src="/Assests/Icons/consumidor.png" alt="Rol seleccionado" width="70" height="90">
 
-                <h2>Ingrese sus datos</h2>
+                <h2 id="tituloRegistro">Ingrese sus datos</h2>
 
                 <form id="formRegistroCliente">
                     <label>Nombre completo</label>
@@ -82,6 +85,13 @@
                     <input type="tel" id="telefonoCliente">
 
                     <p id="errorTelefono" class="mensaje-error"></p>
+
+                    <div id="grupoDireccionNegocio" class="grupo-direccion-negocio">
+                        <label>Dirección de negocio</label>
+                        <input type="text" id="direccionNegocio">
+
+                        <p id="errorDireccionNegocio" class="mensaje-error"></p>
+                    </div>
 
                     <label>Contraseña</label>
                     <input type="password" id="passwordCliente">

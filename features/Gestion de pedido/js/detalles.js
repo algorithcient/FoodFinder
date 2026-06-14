@@ -8,61 +8,18 @@ const mensajeErrorConexion = document.getElementById("mensajeErrorConexion");
 const btnCarrito = document.getElementById("btnCarrito");
 const btnUsuario = document.getElementById("btnUsuario");
 
-/* cambiar a true para simular una cuenta nueva sin pedidos */
-const cuentaNueva = false;
-
 /* cambiar a true para probar el fallo de conexión */
 const falloConexion = false;
 
-/* datos de prueba para presentación */
-const pedidoActivo = {
-    numero: "#1089",
-    nombre: "Lomo saltado",
-    cantidad: "1",
-    hora: "13:43",
-    estado: "Preparando pedido",
-    tiempo: "25 min",
-    restaurante: "Restaurante de Pepe"
-};
-
-const historialPedidos = [
-    {
-        numero: "#1080",
-        nombre: "Ají de gallina",
-        cantidad: "2",
-        hora: "13:43",
-        restaurante: "Victoria's food",
-        precio: "S/. 20",
-        estado: "Entregado"
-    },
-    {
-        numero: "#1079",
-        nombre: "Salchipapa",
-        cantidad: "3",
-        hora: "9:43",
-        restaurante: "Pollería Tarrillos",
-        precio: "S/. 24",
-        estado: "Entregado"
-    }
-];
+function obtenerPlatos() {
+    return JSON.parse(localStorage.getItem("platos")) || [];
+}
 
 function obtenerClaseEstado(estado) {
-    if (estado === "Recibido") {
-        return "estado-recibido";
-    }
-
-    if (estado === "Preparando pedido") {
-        return "estado-preparando";
-    }
-
-    if (estado === "Listo") {
-        return "estado-listo";
-    }
-
-    if (estado === "Entregado") {
-        return "estado-entregado";
-    }
-
+    if (estado === "Recibido") return "estado-recibido";
+    if (estado === "Preparando pedido") return "estado-preparando";
+    if (estado === "Listo") return "estado-listo";
+    if (estado === "Entregado") return "estado-entregado";
     return "estado-recibido";
 }
 
@@ -70,10 +27,24 @@ function mostrarPedidoActivo() {
     tablaPedidoActivo.innerHTML = "";
     mensajeSinPedido.textContent = "";
 
-    if (cuentaNueva === true) {
+    const platos = obtenerPlatos();
+
+    if (platos.length === 0) {
         mensajeSinPedido.textContent = "No tienes pedidos en curso actualmente.";
         return;
     }
+
+    const plato = platos[0];
+
+    const pedidoActivo = {
+        numero: "#1089",
+        nombre: plato.nombre,
+        cantidad: "1",
+        hora: "13:43",
+        estado: "Preparando pedido",
+        tiempo: "25 min",
+        restaurante: "FoodFinder"
+    };
 
     const fila = document.createElement("tr");
 
@@ -124,12 +95,24 @@ function mostrarHistorialPedidos() {
     tablaHistorialPedidos.innerHTML = "";
     mensajeSinHistorial.textContent = "";
 
-    if (cuentaNueva === true) {
+    const platos = obtenerPlatos();
+
+    if (platos.length === 0) {
         mensajeSinHistorial.textContent = "Todavía no tienes pedidos anteriores.";
         return;
     }
 
-    historialPedidos.forEach(function (pedido) {
+    platos.forEach(function (plato, index) {
+        const pedido = {
+            numero: "#10" + (80 + index),
+            nombre: plato.nombre,
+            cantidad: "1",
+            hora: "13:43",
+            restaurante: "FoodFinder",
+            precio: "S/. " + plato.precio,
+            estado: "Entregado"
+        };
+
         const fila = document.createElement("tr");
 
         const columnaNumero = document.createElement("td");

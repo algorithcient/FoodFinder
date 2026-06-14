@@ -569,7 +569,6 @@ img {
 
 /*Page/Pedido/LieserlAyala*/
 
-
 /*cuenta-1*/
 * {
     box-sizing: border-box;
@@ -645,10 +644,7 @@ button {
     margin-top: 25px;
 }
 
-/* ================================= */
 /* PANTALLA LOGIN */
-/* ================================= */
-
 .tarjeta-login {
     display: flex;
     width: 900px;
@@ -661,7 +657,7 @@ button {
 
 .imagen-login {
     width: 50%;
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../../../Assets/Img/imagen_fondo.png");
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("/Assests/Img/imagen_fondo.png");
     background-size: cover;
     background-position: center;
 }
@@ -681,7 +677,7 @@ button {
 
 .formulario-login p {
     color: #1C2B39;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-size: 18px;
 }
 
@@ -713,7 +709,7 @@ button {
     margin-top: 15px;
 }
 
-/*pantalla de seleccion rol*/
+/* PANTALLA SELECCIÓN DE ROL */
 .tarjeta-rol {
     position: relative;
     width: 700px;
@@ -755,12 +751,6 @@ button {
     object-fit: contain;
 }
 
-/*
-.icono-rol {
-    font-size: 130px;
-    margin-bottom: 20px;
-}
-*/
 .rol button {
     width: 170px;
     padding: 10px;
@@ -772,7 +762,7 @@ button {
     color: #000000;
 }
 
-/*registro cliente*/
+/* PANTALLA REGISTRO */
 .tarjeta-registro {
     position: relative;
     width: 560px;
@@ -783,15 +773,16 @@ button {
     text-align: center;
 }
 
-.icono-cliente {
-    font-size: 55px;
+#iconoRegistroRol {
+    width: 70px;
+    height: 90px;
+    object-fit: contain;
     margin-bottom: 10px;
 }
 
 .tarjeta-registro h2 {
-    color: #FF8A00;
     font-size: 32px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .tarjeta-registro form {
@@ -801,7 +792,6 @@ button {
 }
 
 .tarjeta-registro label {
-    color: #FF8A00;
     margin-bottom: 8px;
     font-size: 15px;
 }
@@ -811,7 +801,7 @@ button {
     border: none;
     padding: 18px;
     border-radius: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
     font-size: 16px;
 }
 
@@ -819,8 +809,46 @@ button {
     align-self: center;
 }
 
-/*responsible*/
+/* color para consumidor */
+.tarjeta-registro.registro-cliente h2,
+.tarjeta-registro.registro-cliente label {
+    color: #FF8A00;
+}
 
+/* color para cocinero */
+.tarjeta-registro.registro-cocinero h2,
+.tarjeta-registro.registro-cocinero label {
+    color: #4CAF50;
+}
+
+.grupo-direccion-negocio {
+    display: none;
+}
+
+.mensaje-error {
+    color: #D32F2F !important;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+    font-weight: bold;
+}
+
+.mensaje-exito {
+    color: #4CAF50 !important;
+    font-size: 14px !important;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mensaje-sugerencia {
+    color: #FF8A00 !important;
+    font-size: 14px !important;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
 @media screen and (max-width: 900px) {
     .tarjeta-login {
         width: 90%;
