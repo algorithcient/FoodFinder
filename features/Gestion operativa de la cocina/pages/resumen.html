@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+    <title>Resumen - FoodFinder</title>
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="resumen.html" class="dashboard_logo" id="btn-logo-panel">
+    <img
+        src="../../../Assests/Icons/FF_Logo_Coci.png"
+        alt="Logo FoodFinder">
+    </a>
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+
+    <nav class="dashboard_nav_derecha">
+        <button
+            type="button"
+            class="btn_dashboard"
+            id="btn_dashboard">
+            Dashboard
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-perfil-panel"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-salir"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+
+        <nav class="sidebar_nav">
+            <a href="resumen.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+
+            <a href="pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+
+            <a href="mis_platos.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+
+            <a href="Inventario.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+
+            <a href="../../Administracion/Pages/Estadisticas.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+            <a href="configuracion.html" class="sidebar_item">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina" id="resumenSaludo">Buenos días &#128075;</h1>
+                <p class="resumen_saludo_sub" id="resumenFecha">Cargando fecha...</p>
+            </div>
+
+            <button type="button" class="btn_agregar" id="btnActualizarResumen">
+                &#128260; Actualizar
+            </button>
+        </div>
+
+        <section class="inventario_resumen">
+            <div class="inventario_card_resumen">
+                <p class="resumen_label">VENTAS HOY</p>
+                <p class="resumen_numero" id="valorVentasHoy">S/ 0.00</p>
+                <p class="resumen_sub resumen_sub_verde" id="variacionVentasHoy">&#9650; 0% vs ayer</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <p class="resumen_label">PEDIDOS</p>
+                <p class="resumen_numero" id="valorPedidosHoy">0</p>
+                <p class="resumen_sub resumen_sub_verde" id="variacionPedidosHoy">&#9650; 0 vs ayer</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <p class="resumen_label">TICKET PROMEDIO</p>
+                <p class="resumen_numero" id="valorTicketPromedio">S/ 0.00</p>
+                <p class="resumen_sub resumen_sub_verde" id="variacionTicketPromedio">&#9650; 0% vs ayer</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <p class="resumen_label">CANCELADOS</p>
+                <p class="resumen_numero resumen_numero_rojo" id="valorCanceladosHoy">0</p>
+                <p class="resumen_sub resumen_sub_rojo" id="variacionCanceladosHoy">&#9660; 0 vs ayer</p>
+            </div>
+        </section>
+
+        <div class="config_fila_inferior">
+            <div class="config_card" style="flex: 1; margin: 0;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Ventas por día (S/)</h2>
+                <div id="graficoVentasResumen" class="grafico-barras"></div>
+            </div>
+
+            <div class="config_card" style="flex: 1; margin: 0;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Platos más vendidos</h2>
+                <div id="platosMasVendidosResumen"></div>
+            </div>
+        </div>
+
+        <h2 class="dashboard_subtitulo_pagina" style="margin-top: 10px;">
+            Pedidos recientes
+        </h2>
+
+        <section class="tabla_card">
+            <table class="tabla_dashboard">
+                <thead>
+                    <tr class="tabla_encabezado">
+                        <th class="tabla_th">PEDIDO</th>
+                        <th class="tabla_th">PLATO</th>
+                        <th class="tabla_th">CLIENTE</th>
+                        <th class="tabla_th">N° PLATOS</th>
+                        <th class="tabla_th">ESTADO</th>
+                        <th class="tabla_th">HORA</th>
+                        <th class="tabla_th">ACCIÓN</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody_pedidos_resumen">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="inventario_resumen">
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono">&#128230;</span>
+                <p class="resumen_label">Total Insumos</p>
+                <p id="resumenTotalInsumos" class="resumen_numero">0</p>
+                <p class="resumen_sub">registrados</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_verde">&#9989;</span>
+                <p class="resumen_label">Con stock OK</p>
+                <p id="resumenStockOk" class="resumen_numero resumen_numero_verde">0</p>
+                <p class="resumen_sub resumen_sub_verde">En buen nivel</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_amarillo">&#9888;</span>
+                <p class="resumen_label">Stock bajo</p>
+                <p id="resumenStockBajo" class="resumen_numero resumen_numero_amarillo">0</p>
+                <p class="resumen_sub resumen_sub_amarillo">Por reponer</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_rojo">&#128683;</span>
+                <p class="resumen_label">Agotados</p>
+                <p id="resumenStockAgotado" class="resumen_numero resumen_numero_rojo">0</p>
+                <p class="resumen_sub resumen_sub_rojo">Acción urgente</p>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/resumen.js" defer></script>
+
+</body>
+</html>

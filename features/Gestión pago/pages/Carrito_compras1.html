@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFinder - Checkout Paso 1: Dirección y Entrega</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="../../Navegación/pages/home.html">
+                <img
+                    src="../../../Assests/Icons/FF_Logo_Consu.png"
+                    alt="FoodFinder Logo"
+                    class="logo-completo-consumidor">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <input
+                type="text"
+                placeholder="Busca desde el Home de FoodFinder"
+                class="search-bar"
+                id="buscadorCheckout"
+                readonly>
+        </div>
+
+        <div class="navbar-right">
+            <a
+                href="../../Gestion de pedido/Pages/detalles-cliente.html"
+                class="btn-active-orders">
+                Mis Pedidos
+            </a>
+
+            <div class="nav-icons">
+                <a href="Carrito_compras1.html">
+                    <img
+                        src="../../../Assests/Icons/carrito.png"
+                        alt="Carrito de compras"
+                        class="icon">
+                </a>
+
+                <a href="../../Gestion de pedido/Pages/cuenta-cliente.html">
+                    <img
+                        src="../../../Assests/Icons/perfil.png"
+                        alt="Perfil"
+                        class="icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <p class="breadcrumb">
+            <a href="../../Navegación/pages/home.html">HOME</a>
+            <span class="separator">—</span>
+            CHECKOUT
+            <span class="separator">—</span>
+            PASO 1: DIRECCIÓN Y ENTREGA
+        </p>
+
+        <div class="step-bar">
+            <div class="step-item active">
+                <div class="step-number">1</div>
+                <span class="step-label">Dirección y entrega</span>
+            </div>
+
+            <div class="step-divider"></div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <span class="step-label">Pago</span>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <section class="payment-section">
+                <h2 class="section-title">📍 Dirección de entrega</h2>
+
+                <div class="card-fields">
+                    <div class="form-group">
+                        <label for="direccionEntrega">Dirección</label>
+                        <input
+                            type="text"
+                            id="direccionEntrega"
+                            value="Av. Javier Prado 1234">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="distritoEntrega">Distrito</label>
+                            <input
+                                type="text"
+                                id="distritoEntrega"
+                                value="San Isidro">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referenciaEntrega">Referencia</label>
+                            <input
+                                type="text"
+                                id="referenciaEntrega"
+                                value="Piso 3, Dpto 302">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instruccionesEntrega">Instrucciones al repartidor</label>
+                        <textarea
+                            id="instruccionesEntrega"
+                            class="form-textarea"
+                            placeholder="Instrucciones especiales..."
+                            rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="actions" style="margin-top: 24px; justify-content: flex-start;">
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        id="btnVolverHome">
+                        ← Seguir comprando
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="btnContinuarPago"
+                        style="max-width: 200px;">
+                        Continuar →
+                    </button>
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <div class="summary-card">
+                    <h3>🛒 Tu pedido</h3>
+
+                    <div id="cart-items" class="cart-items">
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>S/ 0.00</span>
+                        </div>
+
+                        <div class="total-row">
+                            <span>Delivery</span>
+                            <span>S/ 0.00</span>
+                        </div>
+
+                        <div class="total-row final">
+                            <span>Total</span>
+                            <span>S/ 0.00</span>
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="btnIrCheckout"
+                        style="width: 100%; margin-top: 20px;">
+                        Ir al checkout →
+                    </button>
+                </div>
+
+                <div class="estimated-time">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8C14.6668 4.3181 11.6821 1.33333 8.00016 1.33333C4.31826 1.33333 1.3335 4.3181 1.3335 8C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667Z" stroke="#555555" stroke-width="1.33333" stroke-linecap="round"/>
+                        <path d="M8 4V8L10.6667 9.33333" stroke="#555555" stroke-width="1.33333" stroke-linecap="round"/>
+                    </svg>
+
+                    <span>
+                        Tiempo estimado:
+                        <strong>25-35 min</strong>
+                    </span>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="../js/paso1.js"></script>
+</body>
+</html>

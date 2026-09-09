@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+    <title>Mis Platos - FoodFinder</title>
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="pedidos_entrantes.html" class="dashboard_logo" id="btn-logo-panel">
+    <img
+        src="../../../Assests/Icons/FF_Logo_Coci.png"
+        alt="Logo FoodFinder">
+    </a>
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+
+
+    <nav class="dashboard_nav_derecha">
+        <button
+            type="button"
+            class="btn_dashboard"
+            id="btn_dashboard">
+            Dashboard
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-perfil-panel"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-salir"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+
+        <nav class="sidebar_nav">
+            <a href="resumen.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+
+            <a href="pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+
+            <a href="mis_platos.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+
+            <a href="Inventario.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+
+            <a href="../../Administracion/Pages/Estadisticas.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+            
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+
+            <a href="configuracion.html" class="sidebar_item">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina">Mis platos</h1>
+                <p style="color:#6B7280; margin-top: 4px;">
+                    Gestiona la carta, precios, stock e imágenes de tu restaurante.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="btn_agregar"
+                id="btnAgregarPlato">
+                &#43; Agregar plato
+            </button>
+        </div>
+
+        <section class="tabla_card">
+            <table class="tabla_dashboard">
+                <thead>
+                    <tr class="tabla_encabezado">
+                        <th class="tabla_th">PLATO</th>
+                        <th class="tabla_th">PRECIO</th>
+                        <th class="tabla_th">STOCK</th>
+                        <th class="tabla_th">ESTADO</th>
+                        <th class="tabla_th">PEDIDOS</th>
+                        <th class="tabla_th">ACCIONES</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyPlatos">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> <!-- agregando el CDN de Supabase -->
+<script src="../js/mis_platos.js" defer></script>
+
+</body>
+</html>

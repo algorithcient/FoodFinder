@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pedidos - FoodFinder</title>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <button
+                type="button"
+                id="btnHomePedidos"
+                style="border: none; background: transparent; cursor: pointer; padding: 0; display: flex; align-items: center;">
+                <img src="../../../Assests/Icons/FF_Logo_Consu.png" alt="FoodFinder Logo" class="logo-completo-consumidor">
+            </button>
+        </div>
+
+        <div class="navbar-right">
+            <button type="button" class="btn-active-orders" id="btnMisPedidosActual">
+                Mis Pedidos
+            </button>
+
+            <div class="nav-icons">
+                <button
+                    type="button"
+                    id="btnCarrito"
+                    style="border: none; background: transparent; cursor: pointer; padding: 0;">
+                    <img src="../../../Assests/Icons/carrito.png" alt="Carrito de compras" class="icon">
+                </button>
+
+                <button
+                    type="button"
+                    id="btnUsuario"
+                    style="border: none; background: transparent; cursor: pointer; padding: 0;">
+                    <img src="../../../Assests/Icons/perfil.png" alt="Perfil del cliente" class="icon">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor-pedidos-cliente">
+
+        <section class="seccion-pedido" id="seccionPedidosActivos">
+            <div class="titulo-seccion-pedido">
+                <h2>Seguimiento de mi pedido</h2>
+                <p>Observa las fases de tu pedido en tiempo real</p>
+            </div>
+
+            <div class="tarjeta-tabla-pedido">
+                <table class="tabla-pedidos">
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Nombre del pedido</th>
+                            <th>Nro. Platos</th>
+                            <th>H. Pedido</th>
+                            <th>Estado</th>
+                            <th>Tiempo estimado</th>
+                            <th>Nombre del restaurante</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaPedidoActivo">
+                    </tbody>
+                </table>
+
+                <p id="mensajeSinPedido" class="mensaje-vacio"></p>
+                <p id="mensajeErrorConexion" class="mensaje-error-conexion"></p>
+            </div>
+        </section>
+
+        <section class="seccion-pedido" id="seccionHistorialPedidos">
+            <div class="titulo-seccion-pedido">
+                <h2>Historial de mis pedidos</h2>
+                <p>Observa todos tus pedidos anteriores</p>
+            </div>
+
+            <div class="tarjeta-tabla-pedido">
+                <table class="tabla-pedidos">
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Nombre del pedido</th>
+                            <th>Nro. Platos</th>
+                            <th>H. Pedido</th>
+                            <th>Nombre del restaurante</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaHistorialPedidos">
+                    </tbody>
+                </table>
+
+                <p id="mensajeSinHistorial" class="mensaje-vacio"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/detalles.js"></script>
+</body>
+</html>

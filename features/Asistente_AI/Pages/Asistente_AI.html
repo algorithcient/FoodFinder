@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+    
+    <link rel="stylesheet" href="Asistente_AI.css">
+    
+    <title>Asistente IA - FoodFinder</title>
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="pedidos_entrantes.html" class="dashboard_logo" id="btn-logo-panel">
+    <img
+        src="../../../Assests/Icons/FF_Logo_Coci.png"
+        alt="Logo FoodFinder">
+    </a>
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+
+    <nav class="dashboard_nav_derecha">
+        <button
+            type="button"
+            class="btn_dashboard"
+            id="btn_dashboard">
+            Dashboard
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-perfil-panel"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-salir"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+
+        <nav class="sidebar_nav">
+            <a href="/features/Gestion operativa de la cocina/pages/resumen.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+
+            <a href="/features/Gestion operativa de la cocina/pages/pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+
+            <a href="/features/Gestion operativa de la cocina/pages/mis_platos.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+
+            <a href="/features/Gestion operativa de la cocina/pages/Inventario.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+
+            <a href="/features/Administracion/Pages/Estadisticas.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+            <a href="/features/Gestion operativa de la cocina/pages/configuracion.html" class="sidebar_item">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina">Asistente IA</h1>
+                <p style="color:#6B7280; margin-top: 4px;">
+                    Genera análisis de menú, sugerencias de precios y optimización con OpenAI.
+                </p>
+            </div>
+        </div>
+
+        <section class="tabla_card" style="margin-bottom: 24px; padding: 20px;">
+            <div style="max-width: 550px;">
+                <label for="openai-key" style="display: block; margin-bottom: 8px; font-weight: 600; color: #374151;">
+                    API key de OpenAI
+                </label>
+                <input 
+                    type="password" 
+                    id="openai-key" 
+                    placeholder="sk-..." 
+                    autocomplete="off" 
+                    style="width: 100%; padding: 10px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 14px; outline: none; box-sizing: border-box;"
+                />
+                <p style="color: #6B7280; font-size: 12px; margin-top: 6px;">
+                    🔒 Tu clave se guarda localmente en el almacenamiento de tu navegador (localStorage) y nunca toca nuestro servidor.
+                </p>
+            </div>
+        </section>
+
+        <section class="tabla_card" style="padding: 20px;">
+            <div id="chat-responses" style="min-height: 280px; max-height: 420px; overflow-y: auto; border: 1px solid #E5E7EB; padding: 16px; margin-bottom: 16px; border-radius: 6px; background-color: #F9FAFB; font-size: 14px; line-height: 1.5;">
+                <p style="color: #9CA3AF; font-style: italic; text-align: center; margin-top: 20px;">
+                    Configura tu API Key en el cuadro superior para empezar a consultar con el modelo gpt-4o-mini o generar imágenes.
+                </p>
+            </div>
+
+            <div class="chat_acciones_container">
+                <input 
+                    type="text" 
+                    id="chat-message" 
+                    placeholder="Pregúntale a la IA o describe la imagen que quieres..." 
+                    style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 14px; outline: none; box-sizing: border-box; height: 100%;"
+                />
+                
+                <div class="chat_botones_grupo">
+                    <button 
+                        type="button" 
+                        onclick="enviarConsultaIA()" 
+                        class="btn_agregar" 
+                        style="margin: 0; white-space: nowrap; height: 100%; padding: 10px 18px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.1em;">&#10148;</span> Enviar consulta
+                    </button>
+                    
+                    <button 
+                        type="button" 
+                        id="btn-generar-imagen"
+                        class="btn_agregar" 
+                        style="margin: 0; white-space: nowrap; height: 100%; padding: 10px 18px; background-color: #f97316; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.1em;">&#128396;</span> Generar imagen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/features/Asistente_AI/js/Asistente_AI.js" defer></script>
+
+</body>
+</html>

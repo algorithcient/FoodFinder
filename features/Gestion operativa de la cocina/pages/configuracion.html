@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - FoodFinder</title>
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="pedidos_entrantes.html" class="dashboard_logo" id="btn-logo-panel">
+    <img
+        src="../../../Assests/Icons/FF_Logo_Coci.png"
+        alt="Logo FoodFinder">
+    </a>
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+
+   
+
+    <nav class="dashboard_nav_derecha">
+        <button
+            type="button"
+            class="btn_dashboard"
+            id="btn_dashboard">
+            Dashboard
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-perfil-panel"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            class="nav_icono_link"
+            id="btn-salir"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+
+        <nav class="sidebar_nav">
+            <a href="resumen.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+
+            <a href="pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+
+            <a href="mis_platos.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+
+            <a href="Inventario.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+
+            <a href="../../Administracion/Pages/Estadisticas.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+            <a href="configuracion.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina">Configuración</h1>
+                <p class="dashboard_subtitulo_descripcion">
+                    Actualiza la información pública de tu restaurante.
+                </p>
+            </div>
+        </div>
+
+        <div class="config-sections-wrapper">
+
+            <section class="config-section">
+                <h2 class="config-section-titulo">Información del restaurante</h2>
+
+                <div class="form-field">
+                    <label class="form-label" for="nombre-restaurante">
+                        Nombre del restaurante
+                    </label>
+                    <input class="form-input" type="text" id="nombre-restaurante">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="cocina-restaurante">
+                        Tipo de cocina
+                    </label>
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="cocina-restaurante"
+                        placeholder="Ejemplo: Criolla, marina, saludable, italiana...">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="descripcion">
+                        Descripción
+                    </label>
+                    <textarea class="form-input textarea" id="descripcion" rows="3"></textarea>
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="direccion-restaurante">
+                        Dirección
+                    </label>
+                    <input class="form-input" type="text" id="direccion-restaurante">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="distrito-restaurante">
+                        Distrito
+                    </label>
+                    <input class="form-input" type="text" id="distrito-restaurante">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="telefono">
+                        Teléfono
+                    </label>
+                    <input
+                        class="form-input"
+                        type="tel"
+                        id="telefono"
+                        placeholder="+51 999 999 999">
+                </div>
+
+                <div class="form-field">
+                    <label class="form-label" for="estado-restaurante">
+                        Estado del restaurante
+                    </label>
+
+                    <select class="form-input" id="estado-restaurante">
+                        <option value="Abierto">Abierto</option>
+                        <option value="Cerrado">Cerrado</option>
+                    </select>
+                </div>
+
+                <div class="fila-inferior">
+                    <div class="adjuntar-grupo">
+                        <div class="adjuntar-item">
+                            <label class="adjuntar-label">
+                                Foto del restaurante
+                            </label>
+
+                            <button
+                                type="button"
+                                class="btn-adjuntar"
+                                id="btn-foto">
+                                Adjuntar foto
+                            </button>
+
+                            <input
+                                type="file"
+                                id="input-foto"
+                                accept="image/*"
+                                style="display:none;">
+
+                            <img
+                                id="preview-foto"
+                                alt="Vista previa foto restaurante"
+                                style="display:none; max-width:160px; margin-top:10px; border-radius:12px;">
+                        </div>
+
+                        <div class="adjuntar-item">
+                            <label class="adjuntar-label">
+                                Logo del restaurante
+                            </label>
+
+                            <button
+                                type="button"
+                                class="btn-adjuntar"
+                                id="btn-logo">
+                                Adjuntar logo
+                            </button>
+
+                            <input
+                                type="file"
+                                id="input-logo"
+                                accept="image/*"
+                                style="display:none;">
+
+                            <img
+                                id="preview-logo"
+                                alt="Vista previa logo restaurante"
+                                style="display:none; max-width:90px; margin-top:10px; border-radius:12px;">
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-guardar"
+                    id="btn-guardar-info">
+                    Guardar cambios
+                </button>
+            </section>
+
+            <section class="config-section">
+                <h2 class="config-section-titulo">Horario de atención</h2>
+
+                <div class="horario-fila">
+                    <span class="horario-dia">Lunes — Viernes</span>
+
+                    <div class="horario-inputs">
+                        <input class="horario-time" type="time" id="lv-inicio" value="08:00">
+                        <span class="separador-hora">—</span>
+                        <input class="horario-time" type="time" id="lv-fin" value="22:00">
+                    </div>
+
+                    <div class="cerrado-toggle">
+                        <label class="toggle-switch">
+                            <input class="toggle-input" type="checkbox" id="toggle-lv">
+                            <span class="toggle-track"></span>
+                        </label>
+                        <span class="cerrado-texto">Cerrado</span>
+                    </div>
+                </div>
+
+                <div class="horario-fila">
+                    <span class="horario-dia">Sábado</span>
+
+                    <div class="horario-inputs">
+                        <input class="horario-time" type="time" id="sa-inicio" value="09:00">
+                        <span class="separador-hora">—</span>
+                        <input class="horario-time" type="time" id="sa-fin" value="22:00">
+                    </div>
+
+                    <div class="cerrado-toggle">
+                        <label class="toggle-switch">
+                            <input class="toggle-input" type="checkbox" id="toggle-sa">
+                            <span class="toggle-track"></span>
+                        </label>
+                        <span class="cerrado-texto">Cerrado</span>
+                    </div>
+                </div>
+
+                <div class="horario-fila">
+                    <span class="horario-dia">Domingo</span>
+
+                    <div class="horario-inputs">
+                        <input class="horario-time" type="time" id="do-inicio" value="10:00">
+                        <span class="separador-hora">—</span>
+                        <input class="horario-time" type="time" id="do-fin" value="20:00">
+                    </div>
+
+                    <div class="cerrado-toggle">
+                        <label class="toggle-switch">
+                            <input class="toggle-input" type="checkbox" id="toggle-do">
+                            <span class="toggle-track"></span>
+                        </label>
+                        <span class="cerrado-texto">Cerrado</span>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-actualizar"
+                    id="btn-actualizar-horarios">
+                    Actualizar horarios
+                </button>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/configuracion.js" defer></script>
+
+</body>
+</html>

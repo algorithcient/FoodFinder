@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - FoodFinder</title>
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="../../Gestion operativa de la cocina/pages/pedidos_entrantes.html" class="dashboard_logo" id="btn-logo-panel">
+        <img src="../../../Assests/Icons/FF_Logo_Coci.png" alt="Logo FoodFinder">
+    </a>
+
+
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+    <nav class="dashboard_nav_derecha">
+        <button type="button" class="btn_dashboard" id="btn_dashboard">
+            Dashboard
+        </button>
+        <button type="button" class="nav_icono_link" id="btn-perfil-panel">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+        <button type="button" class="nav_icono_link" id="btn-salir">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+        <nav class="sidebar_nav">
+            <a href="../../Gestion operativa de la cocina/pages/resumen.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+            <a href="../../Gestion operativa de la cocina/pages/pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+            <a href="../../Gestion operativa de la cocina/pages/mis_platos.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+            <a href="../../Gestion operativa de la cocina/pages/Inventario.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+            <a href="Estadisticas.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+            <a href="../../Gestion operativa de la cocina/pages/configuracion.html" class="sidebar_item">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+        
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina">Estadísticas del negocio</h1>
+                <p class="dashboard_subtitulo_descripcion">Revisa el rendimiento y las ventas de tu restaurante.</p>
+            </div>
+        </div>
+
+        <section class="inventario_resumen" style="margin-bottom: 30px;">
+            <div class="inventario_card_resumen" id="Ventas_hoy" style="margin: 0; width: auto; height: auto;">
+                <h6 class="resumen_label">VENTAS HOY</h6>
+                <h2 class="resumen_numero" id="valorVentasHoy">S/ 0.00</h2>
+                <p class="resumen_sub resumen_sub_verde" id="variacionVentas">▲ 0% vs ayer</p>
+            </div>
+
+            <div class="inventario_card_resumen" id="Pedidos_hoy" style="margin: 0; width: auto; height: auto;">
+                <h6 class="resumen_label">PEDIDOS HOY</h6>
+                <h2 class="resumen_numero" id="valorPedidosHoy">0</h2>
+                <p class="resumen_sub resumen_sub_verde" id="variacionPedidos">▲ 0% vs ayer</p>
+            </div>
+
+            <div class="inventario_card_resumen" id="Ticket_promedio" style="margin: 0; width: auto; height: auto;">
+                <h6 class="resumen_label">TICKET PROMEDIO</h6>
+                <h2 class="resumen_numero" id="valorTicketPromedio">S/ 0.00</h2>
+                <p class="resumen_sub resumen_sub_verde" id="variacionTicket">▲ 0% vs ayer</p>
+            </div>
+        </section>
+
+        <div class="config_fila_inferior" style="gap: 20px;">
+            <div class="config_card" style="flex: 1; margin: 0; padding: 25px;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Ventas por día (S/)</h2>
+                <div id="graficoVentasDia" class="grafico-barras"></div>
+            </div>
+
+            <div class="config_card" style="flex: 1; margin: 0; padding: 25px;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Platos más vendidos hoy</h2>
+                <div id="platosMasVendidosDia"></div>
+            </div>
+        </div>
+
+        <div class="config_fila_inferior" style="gap: 20px;">
+            <div class="config_card" style="flex: 1; margin: 0; padding: 25px;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Ventas por mes (S/)</h2>
+                <div id="graficoVentasMes" class="grafico-barras"></div>
+            </div>
+
+            <div class="config_card" style="flex: 1; margin: 0; padding: 25px;">
+                <h2 class="config_card_titulo" style="font-size: 16px;">Platos más vendidos del mes</h2>
+                <div id="platosMasVendidosMes"></div>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/Estadisticas.js" defer></script>
+</body>
+</html>

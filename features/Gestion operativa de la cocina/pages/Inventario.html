@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../Assests/Icons/LogoPrincipal.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../styles.css">
+    <title>Inventario - FoodFinder</title>
+</head>
+
+<body class="dashboard_body">
+
+<header class="dashboard_navbar">
+    <a href="pedidos_entrantes.html" class="dashboard_logo" id="btn-logo-panel">
+    <img
+        src="../../../Assests/Icons/FF_Logo_Coci.png"
+        alt="Logo FoodFinder">
+    </a>
+
+    <button type="button" class="btn_menu_mobile" id="btnMenuMobile">☰</button>
+
+    <nav class="dashboard_nav_derecha">
+        <button
+            type="button"
+            id="btn_dashboard"
+            class="btn_dashboard">
+            Dashboard
+        </button>
+
+        <button
+            type="button"
+            id="btn-perfil-panel"
+            class="nav_icono_link"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128100;</span>
+            <span class="nav_icono_label">Perfil</span>
+        </button>
+
+        <button
+            type="button"
+            id="btn-salir"
+            class="nav_icono_link"
+            style="border: none; background: transparent; cursor: pointer;">
+            <span class="nav_icono">&#128682;</span>
+            <span class="nav_icono_label">Salir</span>
+        </button>
+    </nav>
+</header>
+
+<div class="dashboard_layout">
+
+    <aside class="dashboard_sidebar">
+        <button type="button" class="btn_cerrar_sidebar" id="btnCerrarSidebar">Cerrar Menú ✕</button>
+        <p class="sidebar_titulo">PANEL DE GESTIÓN</p>
+
+        <nav class="sidebar_nav">
+            <a href="resumen.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127968;</span>
+                Resumen
+            </a>
+
+            <a href="pedidos_entrantes.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128276;</span>
+                Pedidos entrantes
+            </a>
+
+            <a href="mis_platos.html" class="sidebar_item">
+                <span class="sidebar_icono">&#127860;</span>
+                Mis Platos
+            </a>
+
+            <a href="Inventario.html" class="sidebar_item sidebar_item_activo">
+                <span class="sidebar_icono">&#128230;</span>
+                Inventario
+            </a>
+
+            <a href="../../Administracion/Pages/Estadisticas.html" class="sidebar_item">
+                <span class="sidebar_icono">&#128202;</span>
+                Estadísticas
+            </a>
+            
+            <a href="/features/Asistente_AI/Pages/Asistente_AI.html" class="sidebar_item">
+                <span class="sidebar_icono">&#129302;</span>
+                Asistente IA
+            </a>
+
+
+            <a href="configuracion.html" class="sidebar_item">
+                <span class="sidebar_icono">&#9881;</span>
+                Configuración
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard_contenido">
+
+        <div class="pagina_cabecera">
+            <div>
+                <h1 class="dashboard_titulo_pagina">Inventario</h1>
+                <p class="dashboard_subtitulo_descripcion">
+                    Gestiona los insumos y stock de tu restaurante.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="btnAgregarInsumo"
+                class="btn_agregar">
+                &#43; Agregar insumo
+            </button>
+        </div>
+
+        <div class="inventario_resumen">
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono">&#128230;</span>
+                <p class="resumen_label">Total Insumos</p>
+                <p id="totalInsumos" class="resumen_numero">0</p>
+                <p class="resumen_sub">registrados</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_verde">&#9989;</span>
+                <p class="resumen_label">Con stock OK</p>
+                <p id="stockOk" class="resumen_numero resumen_numero_verde">0</p>
+                <p class="resumen_sub resumen_sub_verde">En buen nivel</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_amarillo">&#9888;</span>
+                <p class="resumen_label">Stock bajo</p>
+                <p id="stockBajo" class="resumen_numero resumen_numero_amarillo">0</p>
+                <p class="resumen_sub resumen_sub_amarillo">Por reponer</p>
+            </div>
+
+            <div class="inventario_card_resumen">
+                <span class="resumen_icono resumen_icono_rojo">&#128683;</span>
+                <p class="resumen_label">Agotados</p>
+                <p id="stockAgotado" class="resumen_numero resumen_numero_rojo">0</p>
+                <p class="resumen_sub resumen_sub_rojo">Acción urgente</p>
+            </div>
+        </div>
+
+        <div class="inventario_filtros_estado">
+            <div class="inventario_buscador_wrap">
+                <span class="buscador_icono">&#128269;</span>
+                <input
+                    id="buscadorInventario"
+                    class="inventario_buscador"
+                    type="text"
+                    placeholder="Buscar insumo...">
+            </div>
+
+            <button type="button" id="filtroTodos" class="filtro_estado filtro_estado_activo">Todos</button>
+            <button type="button" id="filtroDisponible" class="filtro_estado">Disponible</button>
+            <button type="button" id="filtroStockBajo" class="filtro_estado">Stock bajo</button>
+            <button type="button" id="filtroAgotado" class="filtro_estado">Agotado</button>
+        </div>
+
+        <div class="inventario_filtros_categoria">
+            <button type="button" class="filtro_categoria filtro_categoria_activo">Todas</button>
+            <button type="button" class="filtro_categoria">Carnes y Pescados</button>
+            <button type="button" class="filtro_categoria">Tubérculos</button>
+            <button type="button" class="filtro_categoria">Verduras y Hierbas</button>
+            <button type="button" class="filtro_categoria">Aceites y Grasas</button>
+            <button type="button" class="filtro_categoria">Cereales y Granos</button>
+            <button type="button" class="filtro_categoria">Frutas</button>
+            <button type="button" class="filtro_categoria">Lácteos y Derivados</button>
+        </div>
+
+        <section class="tabla_card">
+            <table id="tablaInventario" class="tabla_dashboard tabla_inventario">
+                <thead>
+                    <tr class="tabla_encabezado">
+                        <th class="tabla_th">Insumo</th>
+                        <th class="tabla_th">Categoría</th>
+                        <th class="tabla_th">Cantidad actual</th>
+                        <th class="tabla_th">Estado</th>
+                        <th class="tabla_th">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbodyInventario">
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/inventario.js" defer></script>
+
+</body>
+</html>
